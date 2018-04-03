@@ -1,10 +1,10 @@
 export default {
     'development': {
-      'username': 'u306130368_sch',
+      'username': 'postgres',
       'password': 'Bennett00',
-      'database': 'u306130368_sch',
-      'host': '	mysql.hostinger.com',
-      'dialect': 'mysql'
+      'database': 'truescheduling',
+      'host': 'localhost',
+      'dialect': 'postgres'
     },
     'test': {
       'username': 'postgres',
