@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     'development': {
-        'username': 'postgres',
-        'password': '',
+        'username': 'justin',
+        'password': 'Bennett00',
         'database': 'truescheduling',
         'host': 'localhost',
         'dialect': 'postgres'
