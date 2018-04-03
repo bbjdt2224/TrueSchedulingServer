@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "u306130368_sch",
+    "username": "justin",
     "password": "Bennett00",
-    "database": "u306130368_sch",
-    "host": "mysql.hostinger.com",
-    "dialect": "mysql"
+    "database": "truescheduling",
+    "host": "localhost",
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
