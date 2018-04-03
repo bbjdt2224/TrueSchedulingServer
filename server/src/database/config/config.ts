@@ -7,17 +7,17 @@ export default {
       'dialect': 'mysql'
     },
     'test': {
-      'username': 'postgres',
+      'username': 'u306130368_sch',
       'password': 'Bennett00',
-      'database': 'incidenttracking',
-      'host': 'localhost',
-      'dialect': 'postgres'
+      'database': 'u306130368_sch',
+      'host': '	mysql.hostinger.com',
+      'dialect': 'mysql'
     },
     'production': {
-      'username': 'postgres',
-      'password': 'Bennet',
-      'database': 'incidenttracking',
-      'host': 'localhost',
-      'dialect': 'postgres'
+      'username': 'u306130368_sch',
+      'password': 'Bennett00',
+      'database': 'u306130368_sch',
+      'host': '	mysql.hostinger.com',
+      'dialect': 'mysql'
     }
   };
