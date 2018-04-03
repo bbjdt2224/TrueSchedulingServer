@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     'development': {
-        'username': 'u306130368_sch',
-        'password': 'Bennett00',
-        'database': 'u306130368_sch',
-        'host': '	mysql.hostinger.com',
-        'dialect': 'mysql'
+        'username': 'postgres',
+        'password': '',
+        'database': 'truescheduling',
+        'host': 'localhost',
+        'dialect': 'postgres'
     },
     'test': {
         'username': 'postgres',
