@@ -51,10 +51,21 @@ import * as Sequelize from 'sequelize';
             }
         }).then(group => {
             if(group) {
-                db.groupRelation.create({
-                    userId: req.session.passport.user.id,
-                    groupId: group.id
-                }).then(relateion => res.send(relateion));
+				db.groupRelation.findOne({
+					where: {
+						userId: req.session.passport.user.id,
+						groupId: group.id
+					}
+				}).then(relation => {
+					if(!relation){
+						db.groupRelation.create({
+							userId: req.session.passport.user.id,
+							groupId: group.id
+						}).then(relateion => res.send(relateion));
+					}
+					
+				})
+                
             }
             else {
                 res.send({message: 'fail'});
