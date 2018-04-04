@@ -69,7 +69,7 @@ import * as Sequelize from 'sequelize';
             room: req.body.room
            },{
                where: {
-                   id: req.body.id
+                   id: req.params.id
                }
            }).then(
                update => {

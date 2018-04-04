@@ -13,6 +13,6 @@ export default (app: express.Express): void => {
         .put(ClassesController.editClass);
 
     app.route('/api/delete')
-        .post(ClassesController.editClass);
+        .post(ClassesController.deleteClass);
 
 };
