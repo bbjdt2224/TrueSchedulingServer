@@ -57,6 +57,7 @@ import * as Sequelize from 'sequelize';
 						groupId: group.id
 					}
 				}).then(relation => {
+					console.log(relation);
 					if(!relation){
 						db.groupRelation.create({
 							userId: req.session.passport.user.id,
