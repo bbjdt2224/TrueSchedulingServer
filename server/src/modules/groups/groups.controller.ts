@@ -63,8 +63,11 @@ import * as Sequelize from 'sequelize';
 							groupId: group.id
 						}).then(relateion => res.send(relateion));
 					}
+					else {
+						res.send({message: 'fail'});
+					}
 					
-				})
+				});
                 
             }
             else {
