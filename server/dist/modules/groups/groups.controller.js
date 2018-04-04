@@ -47,10 +47,23 @@ class GroupsController {
             }
         }).then(group => {
             if (group) {
-                index_1.default.groupRelation.create({
-                    userId: req.session.passport.user.id,
-                    groupId: group.id
-                }).then(relateion => res.send(relateion));
+                index_1.default.groupRelation.findOne({
+                    where: {
+                        userId: req.session.passport.user.id,
+                        groupId: group.id
+                    }
+                }).then(relation => {
+                    console.log(relation);
+                    if (!relation) {
+                        index_1.default.groupRelation.create({
+                            userId: req.session.passport.user.id,
+                            groupId: group.id
+                        }).then(relateion => res.send(relateion));
+                    }
+                    else {
+                        res.send({ message: 'fail' });
+                    }
+                });
             }
             else {
                 res.send({ message: 'fail' });

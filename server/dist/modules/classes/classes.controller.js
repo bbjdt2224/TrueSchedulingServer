@@ -56,7 +56,7 @@ class ClassesController {
                 room: req.body.room
             }, {
                 where: {
-                    id: req.body.id
+                    id: req.params.id
                 }
             }).then(update => {
                 res.send(update);
@@ -68,8 +68,8 @@ class ClassesController {
     deleteClass(req, res) {
         if (req.session.passport.user) {
             index_1.default.classes.findById(req.body.id).then(cls => {
-                cls.destroy();
                 res.send(null);
+                return cls.destroy();
             });
         }
     }

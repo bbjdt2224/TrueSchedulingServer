@@ -3,7 +3,9 @@ module.exports = (sequelize, DataTypes) => {
         groupName: DataTypes.STRING,
         groupCode: DataTypes.INTEGER,
         creatorId: DataTypes.INTEGER
-    }, {});
+    }, {
+        paranoid: true
+    });
     groups.associate = function (models) {
         groups.hasMany(models.groupRelation, { foreignKey: 'groupId' });
     };

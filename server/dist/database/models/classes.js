@@ -9,7 +9,9 @@ module.exports = (sequelize, DataTypes) => {
         title: DataTypes.STRING,
         building: DataTypes.STRING,
         room: DataTypes.STRING
-    }, {});
+    }, {
+        paranoid: true
+    });
     classes.associate = function (models) {
     };
     return classes;

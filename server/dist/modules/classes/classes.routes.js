@@ -9,5 +9,5 @@ exports.default = (app) => {
         .get(classes_controller_1.default.getClass)
         .put(classes_controller_1.default.editClass);
     app.route('/api/delete')
-        .post(classes_controller_1.default.editClass);
+        .post(classes_controller_1.default.deleteClass);
 };
