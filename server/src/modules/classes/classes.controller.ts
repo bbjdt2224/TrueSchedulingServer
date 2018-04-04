@@ -85,8 +85,8 @@ import * as Sequelize from 'sequelize';
     deleteClass(req, res) {
         if(req.session.passport.user) {
             db.classes.findById(req.body.id).then(cls => {
-                cls.destroy();
                 res.send(null);
+                return cls.destroy();
             });
         }
     }
