@@ -53,7 +53,6 @@ class GroupsController {
                         groupId: group.id
                     }
                 }).then(relation => {
-                    console.log(relation);
                     if (!relation) {
                         index_1.default.groupRelation.create({
                             userId: req.session.passport.user.id,

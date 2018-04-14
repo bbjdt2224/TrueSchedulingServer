@@ -1,7 +1,7 @@
 import db from '../../database/models/index';
 import * as Sequelize from 'sequelize';
 
- class GroupsController {
+class GroupsController {
 
     getAllUserGroups(req, res) {
         db.groupRelation.findAll({
@@ -25,8 +25,8 @@ import * as Sequelize from 'sequelize';
             db.groupRelation.create({
                 userId: req.session.passport.user.id,
                 groupId: success.id
-        }).then(success => {res.send(success);}, fail => {res.send(fail);});
-    } , fail => {res.send(fail);});
+            }).then(success => { res.send(success); }, fail => { res.send(fail); });
+        }, fail => { res.send(fail); });
     }
 
     checkCode(req, res) {
@@ -35,7 +35,7 @@ import * as Sequelize from 'sequelize';
                 groupCode: req.body.code
             }
         }).then(group => {
-            if(group) {
+            if (group) {
                 res.send(false);
             }
             else {
@@ -50,29 +50,28 @@ import * as Sequelize from 'sequelize';
                 groupCode: req.body.code
             }
         }).then(group => {
-            if(group) {
-				db.groupRelation.findOne({
-					where: {
-						userId: req.session.passport.user.id,
-						groupId: group.id
-					}
-				}).then(relation => {
-					console.log(relation);
-					if(!relation){
-						db.groupRelation.create({
-							userId: req.session.passport.user.id,
-							groupId: group.id
-						}).then(relateion => res.send(relateion));
-					}
-					else {
-						res.send({message: 'fail'});
-					}
-					
-				});
-                
+            if (group) {
+                db.groupRelation.findOne({
+                    where: {
+                        userId: req.session.passport.user.id,
+                        groupId: group.id
+                    }
+                }).then(relation => {
+                    if (!relation) {
+                        db.groupRelation.create({
+                            userId: req.session.passport.user.id,
+                            groupId: group.id
+                        }).then(relateion => res.send(relateion));
+                    }
+                    else {
+                        res.send({ message: 'fail' });
+                    }
+
+                });
+
             }
             else {
-                res.send({message: 'fail'});
+                res.send({ message: 'fail' });
             }
         });
     }

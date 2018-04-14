@@ -30,7 +30,8 @@ const db:any = {
   users: sequelize.import('./users'),
   classes: sequelize.import('./classes'),
   groups: sequelize.import('./groups'),
-  groupRelation : sequelize.import('./grouprelation')
+  groupRelation : sequelize.import('./grouprelation'),
+  events: sequelize.import('./events')
 };
 
 Object.keys(db).forEach(modelName => {
